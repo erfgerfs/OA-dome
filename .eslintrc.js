@@ -24,15 +24,6 @@ module.exports = {
         }
       }
     ],
-    "prettier/prettier": [
-      "warn",
-      {
-        useTabs: false,
-        tabWidth: 2,
-        printWidth: 100,
-        singleQuote: false
-      }
-    ],
     "vue/singleline-html-element-content-newline": "off",
     "vue/multiline-html-element-content-newline": "off",
     "vue/name-property-casing": ["error", "PascalCase"],

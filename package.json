@@ -12,7 +12,7 @@
     "test:unit": "jest --clearCache && vue-cli-service test:unit",
     "test:ci": "npm run lint && npm run test:unit",
     "prettier": "prettier --write .",
-    "lint": "eslint . --ext .vue,.js",
+    "lint": "eslint --fix --ext .vue,.js",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
   },

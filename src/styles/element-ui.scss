@@ -15,6 +15,7 @@
   display: none;
 }
 
+
 // to fixed https://github.com/ElemeFE/element/issues/2461
 .el-dialog {
   transform: none;
@@ -38,11 +39,32 @@
 // dropdown
 .el-dropdown-menu {
   a {
-    display: block;
+    display: block
   }
 }
 
 // to fix el-date-picker css style
 .el-range-separator {
   box-sizing: content-box;
+}
+
+.el-button--primary {
+  background-color: #2752fb;
+
+  &:hover {
+    background-color: #7088eb;
+  }
+}
+
+.el-tree-node__content {
+  height: 40px;
+}
+
+.el-tree-node__content:hover  {
+  color: #276FFB;
+  background-color: #f0f4ff;
+}
+.el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content {
+  color: #276FFB;
+  background-color: #f0f4ff;
 }

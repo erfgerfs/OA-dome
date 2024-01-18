@@ -1,11 +1,11 @@
 #app {
+
   .main-container {
     min-height: 100%;
-    transition: margin-left 0.28s;
+    transition: margin-left .28s;
     margin-left: $sideBarWidth;
     position: relative;
   }
-
   .sidebar-container {
     transition: width 0.28s;
     width: $sideBarWidth !important;
@@ -18,17 +18,16 @@
     left: 0;
     z-index: 1001;
     overflow: hidden;
+    background: $blue;
 
     // reset element-ui css
     .horizontal-collapse-transition {
-      transition:
-        0s width ease-in-out,
-        0s padding-left ease-in-out,
-        0s padding-right ease-in-out;
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
     }
 
     .scrollbar-wrapper {
       overflow-x: hidden !important;
+        background: url('~@/assets/common/leftnavBg.png') no-repeat 0 100%;
     }
 
     .el-scrollbar__bar.is-vertical {
@@ -68,21 +67,46 @@
       border: none;
       height: 100%;
       width: 100% !important;
+      a{
+        li{
+          .svg-icon{
+            color: $menuFontColor;
+            font-size: 18px;
+            vertical-align: middle;
+            .icon{
+              color:$menuFontColor;
+            }
+          }
+          span{
+            color: $menuFontColor;
+          }
+          &:hover{
+            .svg-icon{
+              color: $hoverFontColor
+            }
+            span{
+              color: $hoverFontColor;
+            }
+          }
+        }
+      }
     }
-
     // menu hover
     .submenu-title-noDropdown,
     .el-submenu__title {
       &:hover {
-        background-color: $menuHover !important;
+        // background-color: $menuHover !important;
+        background: linear-gradient(90deg,#1E3CAE
+        3.89%,  #001529
+        100%);
       }
     }
 
-    .is-active > .el-submenu__title {
+    .is-active>.el-submenu__title {
       color: $subMenuActiveText !important;
     }
 
-    & .nest-menu .el-submenu > .el-submenu__title,
+    & .nest-menu .el-submenu>.el-submenu__title,
     & .el-submenu .el-menu-item {
       min-width: $sideBarWidth !important;
       background-color: $subMenuBg !important;
@@ -97,52 +121,42 @@
     .sidebar-container {
       width: 54px !important;
     }
-
     .main-container {
       margin-left: 54px;
     }
-
     .submenu-title-noDropdown {
       padding: 0 !important;
       position: relative;
 
       .el-tooltip {
         padding: 0 !important;
-
         .svg-icon {
           margin-left: 20px;
         }
-
         .sub-el-icon {
           margin-left: 19px;
         }
       }
     }
-
     .el-submenu {
       overflow: hidden;
-
-      & > .el-submenu__title {
+      &>.el-submenu__title {
         padding: 0 !important;
-
         .svg-icon {
           margin-left: 20px;
         }
-
         .sub-el-icon {
           margin-left: 19px;
         }
-
         .el-submenu__icon-arrow {
           display: none;
         }
       }
     }
-
     .el-menu--collapse {
       .el-submenu {
-        & > .el-submenu__title {
-          & > span {
+        &>.el-submenu__title {
+          &>span {
             height: 0;
             width: 0;
             overflow: hidden;
@@ -157,18 +171,16 @@
   .el-menu--collapse .el-menu .el-submenu {
     min-width: $sideBarWidth !important;
   }
-
   // mobile responsive
   .mobile {
     .main-container {
       margin-left: 0px;
     }
-
     .sidebar-container {
-      transition: transform 0.28s;
+      transition: transform .28s;
       width: $sideBarWidth !important;
-    }
 
+    }
     &.hideSidebar {
       .sidebar-container {
         pointer-events: none;
@@ -188,7 +200,7 @@
 
 // when menu collapsed
 .el-menu--vertical {
-  & > .el-menu {
+  &>.el-menu {
     .svg-icon {
       margin-right: 16px;
     }
@@ -198,7 +210,7 @@
     }
   }
 
-  .nest-menu .el-submenu > .el-submenu__title,
+  .nest-menu .el-submenu>.el-submenu__title,
   .el-menu-item {
     &:hover {
       // you can use $subMenuHover
@@ -207,7 +219,7 @@
   }
 
   // the scroll bar appears when the subMenu is too long
-  > .el-menu--popup {
+  >.el-menu--popup {
     max-height: 100vh;
     overflow-y: auto;
 
